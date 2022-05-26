@@ -1,4 +1,10 @@
 function destacaTarefa(evento) {
+  const todosLi = document.getElementsByTagName('li');
+
+  for (let index = 0; index < todosLi.length; index += 1) {
+    todosLi[index].removeAttribute('style');
+  }
+
   evento.target.style.backgroundColor = 'rgb(128, 128, 128)';
 }
 
