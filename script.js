@@ -1,7 +1,8 @@
+const listaTarefa = document.getElementById('lista-tarefas');
+const todosLi = document.getElementsByTagName('li');
+
 function destacaTarefa(evento) {
   const alvo = evento.target;
-
-  const todosLi = document.getElementsByTagName('li');
 
   for (let index = 0; index < todosLi.length; index += 1) {
     todosLi[index].removeAttribute('style');
@@ -25,7 +26,6 @@ function marcaTarefaCompleta(evento) {
 
 function addTarefa() {
   const txtTarefa = document.getElementById('texto-tarefa');
-  const listaTarefa = document.getElementById('lista-tarefas');
   const tagLi = document.createElement('li');
 
   tagLi.addEventListener('click', destacaTarefa);
@@ -36,4 +36,11 @@ function addTarefa() {
   listaTarefa.appendChild(tagLi);
 }
 
+function apagaTodasLi() {
+  while (todosLi.length > 0) {
+    listaTarefa.removeChild(todosLi[0]);
+  }
+}
+
 document.getElementById('criar-tarefa').addEventListener('click', addTarefa);
+document.getElementById('apaga-tudo').addEventListener('click', apagaTodasLi);
