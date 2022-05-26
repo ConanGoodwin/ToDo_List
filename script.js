@@ -13,11 +13,8 @@ function destacaTarefa(evento) {
 
 function marcaTarefaCompleta(evento) {
   const alvo = evento.target;
-  console.log(alvo);
 
   if (alvo.className !== 'completed') {
-
-    console.log(alvo.className);
     alvo.className = 'completed';
   } else {
     alvo.className = '';
@@ -42,5 +39,15 @@ function apagaTodasLi() {
   }
 }
 
+function apagaLiRiscadas() {
+  for (let index = 0; index < todosLi.length; index += 1) {
+    if (todosLi[index].className === 'completed') {
+      listaTarefa.removeChild(todosLi[index]);
+      index -= 1;
+    }
+  }
+}
+
 document.getElementById('criar-tarefa').addEventListener('click', addTarefa);
 document.getElementById('apaga-tudo').addEventListener('click', apagaTodasLi);
+document.getElementById('remover-finalizados').addEventListener('click', apagaLiRiscadas);
