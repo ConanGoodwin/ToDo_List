@@ -1,11 +1,26 @@
 function destacaTarefa(evento) {
+  const alvo = evento.target;
+
   const todosLi = document.getElementsByTagName('li');
 
   for (let index = 0; index < todosLi.length; index += 1) {
     todosLi[index].removeAttribute('style');
   }
 
-  evento.target.style.backgroundColor = 'rgb(128, 128, 128)';
+  alvo.style.backgroundColor = 'rgb(128, 128, 128)';
+}
+
+function marcaTarefaCompleta(evento) {
+  const alvo = evento.target;
+  console.log(alvo);
+
+  if (alvo.className !== 'completed') {
+
+    console.log(alvo.className);
+    alvo.className = 'completed';
+  } else {
+    alvo.className = '';
+  }
 }
 
 function addTarefa() {
@@ -14,11 +29,11 @@ function addTarefa() {
   const tagLi = document.createElement('li');
 
   tagLi.addEventListener('click', destacaTarefa);
+  tagLi.addEventListener('dblclick', marcaTarefaCompleta);
   tagLi.innerText = txtTarefa.value;
   txtTarefa.value = '';
 
   listaTarefa.appendChild(tagLi);
 }
 
-document.getElementById('criar-tarefa').addEventListener('click',addTarefa);
-// rgb(128, 128, 128)
+document.getElementById('criar-tarefa').addEventListener('click', addTarefa);
