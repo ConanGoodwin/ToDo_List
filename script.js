@@ -48,6 +48,36 @@ function apagaLiRiscadas() {
   }
 }
 
+function salvaLista() {
+  localStorage.clear();
+  console.log('oi');
+
+  for (let index = 0; index < todosLi.length; index += 1) {
+    localStorage.setItem(`txtLi${index}`, todosLi[index].innerText);
+    localStorage.setItem(`classeLi${index}`, todosLi[index].className);
+  }
+
+  window.alert('Lista atual salva(inclusive se estiver vazia!).');
+}
+
+function recuperaLi() {
+  if (localStorage.length > 0) {
+    for (let index = 0; index < localStorage.length / 2; index += 1) {
+      const tagLi = document.createElement('li');
+      tagLi.innerHTML = localStorage.getItem(`txtLi${index}`);
+      tagLi.className = localStorage.getItem(`classeLi${index}`);
+      listaTarefa.appendChild(tagLi);
+    }
+  }
+}
+
+window.onload = function setaPagina() {
+  recuperaLi();
+};
+
 document.getElementById('criar-tarefa').addEventListener('click', addTarefa);
 document.getElementById('apaga-tudo').addEventListener('click', apagaTodasLi);
-document.getElementById('remover-finalizados').addEventListener('click', apagaLiRiscadas);
+document
+  .getElementById('remover-finalizados')
+  .addEventListener('click', apagaLiRiscadas);
+document.getElementById('salvar-tarefas').addEventListener('click', salvaLista);
