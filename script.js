@@ -52,7 +52,6 @@ function apagaLiRiscadas() {
 
 function salvaLista() {
   localStorage.clear();
-  console.log('oi');
 
   for (let index = 0; index < todosLi.length; index += 1) {
     localStorage.setItem(`txtLi${index}`, todosLi[index].innerText);
@@ -101,6 +100,14 @@ function desceLi() {
   }
 }
 
+function removeMarcado() {
+  const tagTemp = document.querySelector('.marcado');
+
+  if (tagTemp) {
+    listaTarefa.removeChild(tagTemp);
+  }
+}
+
 window.onload = function setaPagina() {
   recuperaLi();
 };
@@ -113,3 +120,4 @@ document
 document.getElementById('salvar-tarefas').addEventListener('click', salvaLista);
 document.getElementById('mover-cima').addEventListener('click', sobeLi);
 document.getElementById('mover-baixo').addEventListener('click', desceLi);
+document.getElementById('remover-selecionado').addEventListener('click', removeMarcado);
