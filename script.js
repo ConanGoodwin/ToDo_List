@@ -66,6 +66,8 @@ function recuperaLi() {
       const tagLi = document.createElement('li');
       tagLi.innerHTML = localStorage.getItem(`txtLi${index}`);
       tagLi.className = localStorage.getItem(`classeLi${index}`);
+      tagLi.addEventListener('click', destacaTarefa);
+      tagLi.addEventListener('dblclick', marcaTarefaCompleta);
       listaTarefa.appendChild(tagLi);
     }
   }
