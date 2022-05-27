@@ -1,7 +1,32 @@
+main {
+  vertical-align: middle;
+  min-height: 100px;
+}
+
+ol {
+  display: inline-block;
+  box-shadow: 10px 10px 10px 5px black;
+  margin: 10px;
+  padding: 5px 20px 10px 40px;
+}
+
+#mover-cima {
+  display: inline-block;
+  position: absolute;
+  margin: 20px;
+}
+
+#mover-baixo {
+  display: inline-block;
+  position: absolute;
+  margin-top: 50px;
+  margin-left: 10px;
+}
+
 .completed {
   text-decoration: line-through solid rgb(0, 0, 0);
 }
 
 .marcado {
-  background-color:  rgb(128, 128, 128);
+  background-color: rgb(128, 128, 128);
 }
