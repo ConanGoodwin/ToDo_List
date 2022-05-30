@@ -17,6 +17,10 @@ ol {
   box-shadow: 10px 10px 10px 5px black;
   margin: 10px;
   padding: 5px 20px 10px 40px;
+  background-image: url(./imagens/folha_pautada.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: 100% 100%;
 }
 
 #mover-cima {
@@ -38,4 +42,8 @@ ol {
 
 .marcado {
   background-color: rgb(128, 128, 128);
+}
+
+.bordaEstlizadaBtn {
+  border-radius: 30%;
 }
