@@ -1,3 +1,12 @@
+@font-face {
+  font-family: Titular;
+  src: url(./fontes/DigitaltsOrange-nRAPg.ttf);
+}
+
+h1 {
+  font-family: Titular;
+}
+
 main {
   vertical-align: middle;
   min-height: 100px;
