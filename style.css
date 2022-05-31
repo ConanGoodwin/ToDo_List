@@ -3,37 +3,65 @@
   src: url(./fontes/DigitaltsOrange-nRAPg.ttf);
 }
 
+body {
+  background-color: rgba(228, 184, 154, 0.482);
+}
+
 h1 {
   font-family: Titular;
+  text-align: center;
+  /* color: orangered; */
+  color: rgb(141, 43, 8);
+}
+
+header {
+  width: 395px;
+  padding: 2px 10px 10px;
+  background-color: rgb(107, 184, 169);
 }
 
 main {
-  vertical-align: middle;
+  width: 410px;
   min-height: 100px;
+  /* border: 3px outset blue; */
 }
 
 ol {
   display: inline-block;
+  position:relative;
+  /* top: 50%; */
   box-shadow: 10px 10px 10px 5px black;
   margin: 10px;
+  margin-left: 100px;
   padding: 5px 20px 10px 40px;
   background-image: url(./imagens/folha_pautada.png);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-size: 100% 100%;
+  background-size: 108% 125%;
+  background-position: -10px -20px;
 }
 
 #mover-cima {
   display: inline-block;
   position: absolute;
-  margin: 20px;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  background-image: url(./icones/Arrow_Up_36952.png);
+  background-position: -2px 0px;
 }
 
 #mover-baixo {
   display: inline-block;
   position: absolute;
-  margin-top: 50px;
-  margin-left: 10px;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  background-image: url(./icones/Arrow_Down_36955.png);
+  background-position: -2px 0px;
+}
+
+#remover-selecionado {
+  margin-left: 90px;
 }
 
 .completed {
@@ -45,5 +73,5 @@ ol {
 }
 
 .bordaEstlizadaBtn {
-  border-radius: 30%;
+  border-radius: 100%;
 }

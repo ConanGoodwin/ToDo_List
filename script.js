@@ -1,5 +1,19 @@
 const listaTarefa = document.getElementById('lista-tarefas');
 const todosLi = document.getElementsByTagName('li');
+const btnUp = document.getElementById('mover-cima');
+const btnDown = document.getElementById('mover-baixo');
+let qtLista;
+
+function posicaoBotoesNav() {
+  btnUp.style.transform = `translateY(${-380 + 17 * qtLista}%)`;
+  btnDown.style.transform = `translateY(${-270 + 17 * qtLista}%)`;
+  // if (qtLista < 4) {
+  //   listaTarefa.style.transform = `translateY(${170 - qtLista * 55}%)`;
+  //   console.log(167 - qtLista * 12);
+  // } else {
+  //   listaTarefa.style.transform = '';
+  // }
+}
 
 function destacaTarefa(evento) {
   const alvo = evento.target;
@@ -33,21 +47,27 @@ function addTarefa() {
   txtTarefa.value = '';
 
   listaTarefa.appendChild(tagLi);
+  qtLista += 1;
+  posicaoBotoesNav();
 }
 
 function apagaTodasLi() {
   while (todosLi.length > 0) {
     listaTarefa.removeChild(todosLi[0]);
+    qtLista -= 1;
   }
+  posicaoBotoesNav();
 }
 
 function apagaLiRiscadas() {
   for (let index = 0; index < todosLi.length; index += 1) {
     if (todosLi[index].className === 'completed') {
       listaTarefa.removeChild(todosLi[index]);
+      qtLista -= 1;
       index -= 1;
     }
   }
+  posicaoBotoesNav();
 }
 
 function salvaLista() {
@@ -62,6 +82,7 @@ function salvaLista() {
 }
 
 function recuperaLi() {
+  qtLista = 0;
   if (localStorage.length > 0) {
     for (let index = 0; index < localStorage.length / 2; index += 1) {
       const tagLi = document.createElement('li');
@@ -70,7 +91,9 @@ function recuperaLi() {
       tagLi.addEventListener('click', destacaTarefa);
       tagLi.addEventListener('dblclick', marcaTarefaCompleta);
       listaTarefa.appendChild(tagLi);
+      qtLista += 1;
     }
+    posicaoBotoesNav();
   }
 }
 
@@ -105,10 +128,14 @@ function removeMarcado() {
 
   if (tagTemp) {
     listaTarefa.removeChild(tagTemp);
+    qtLista -= 1;
+    posicaoBotoesNav();
   }
 }
 
 window.onload = function setaPagina() {
+  qtLista = 0;
+
   recuperaLi();
 };
 
@@ -118,6 +145,8 @@ document
   .getElementById('remover-finalizados')
   .addEventListener('click', apagaLiRiscadas);
 document.getElementById('salvar-tarefas').addEventListener('click', salvaLista);
-document.getElementById('mover-cima').addEventListener('click', sobeLi);
-document.getElementById('mover-baixo').addEventListener('click', desceLi);
-document.getElementById('remover-selecionado').addEventListener('click', removeMarcado);
+btnUp.addEventListener('click', sobeLi);
+btnDown.addEventListener('click', desceLi);
+document
+  .getElementById('remover-selecionado')
+  .addEventListener('click', removeMarcado);
