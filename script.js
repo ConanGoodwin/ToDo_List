@@ -69,6 +69,10 @@ function apagaLiRiscadas() {
   posicaoBotoesNav();
 }
 
+function exibeModalSave() {
+  meuModal.show();
+}
+
 function salvaLista() {
   localStorage.clear();
 
@@ -77,7 +81,7 @@ function salvaLista() {
     localStorage.setItem(`classeLi${index}`, todosLi[index].className);
   }
 
-  window.alert('Lista atual salva(inclusive se estiver vazia!).');
+  meuModal.hide();
 }
 
 function recuperaLi() {
@@ -143,7 +147,8 @@ document.getElementById('apaga-tudo').addEventListener('click', apagaTodasLi);
 document
   .getElementById('remover-finalizados')
   .addEventListener('click', apagaLiRiscadas);
-document.getElementById('salvar-tarefas').addEventListener('click', salvaLista);
+document.getElementById('salvar-tarefas').addEventListener('click', exibeModalSave);
+document.getElementById('btnSave').addEventListener('click', salvaLista);
 btnUp.addEventListener('click', sobeLi);
 btnDown.addEventListener('click', desceLi);
 document
