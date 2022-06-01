@@ -5,8 +5,8 @@ const btnDown = document.getElementById('mover-baixo');
 let qtLista;
 
 function posicaoBotoesNav() {
-  btnUp.style.transform = `translateY(${-380 + 17 * qtLista}%)`;
-  btnDown.style.transform = `translateY(${-270 + 17 * qtLista}%)`;
+  btnUp.style.transform = `translateY(${-380 + 20 * qtLista}%)`;
+  btnDown.style.transform = `translateY(${-270 + 20 * qtLista}%)`;
   // if (qtLista < 4) {
   //   listaTarefa.style.transform = `translateY(${170 - qtLista * 55}%)`;
   //   console.log(167 - qtLista * 12);

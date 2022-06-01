@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- CSS only -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
@@ -16,11 +15,11 @@
   <header>
     <h1>Minha Lista de Tarefas</h1>
     <input type="text" name="" id="texto-tarefa" placeholder="Nova tarefa">
-    <button id="criar-tarefa">+</button>
+    <button id="criar-tarefa" class="btn btn-primary">+</button>
     <p id="funcionamento">Clique duas vezes em um item para marcá-lo como completo</p>
-    <button id="apaga-tudo">APAGA todas</button>
-    <button id="remover-finalizados">remove FINALIZADOS</button>
-    <button id="salvar-tarefas">SALVAR lista</button>
+    <button id="apaga-tudo" class="btn btn-danger">APAGA todas</button>
+    <button id="remover-finalizados" class="btn btn-warning">remove FINALIZADOS</button>
+    <button id="salvar-tarefas" class="btn btn-info">SALVAR lista</button>
   </header>
 
   <main>
@@ -31,7 +30,7 @@
   </main>
 
   <footer>
-    <button id="remover-selecionado">remover item SELECIONADO</button>
+    <button id="remover-selecionado" class="btn btn-warning">remover item SELECIONADO</button>
   </footer>
 
   <script src="script.js"></script>

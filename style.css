@@ -15,15 +15,14 @@ h1 {
 }
 
 header {
-  width: 395px;
+  width: 460px;
   padding: 2px 10px 10px;
   background-color: rgb(107, 184, 169);
 }
 
 main {
-  width: 410px;
+  width: 460px;
   min-height: 100px;
-  /* border: 3px outset blue; */
 }
 
 ol {
@@ -40,28 +39,27 @@ ol {
   background-position: -10px -20px;
 }
 
-#mover-cima {
+#mover-cima, #mover-baixo {
   display: inline-block;
   position: absolute;
   top: 50%;
   width: 34px;
   height: 34px;
-  background-image: url(./icones/Arrow_Up_36952.png);
+  margin-left: 10px;
   background-position: -2px 0px;
+}
+
+#mover-cima {
+  background-image: url(./icones/Arrow_Up_36952.png);
 }
 
 #mover-baixo {
-  display: inline-block;
-  position: absolute;
-  top: 50%;
-  width: 34px;
-  height: 34px;
   background-image: url(./icones/Arrow_Down_36955.png);
-  background-position: -2px 0px;
 }
 
 #remover-selecionado {
-  margin-left: 90px;
+  margin-left: 70px;
+  margin-top: 5px;
 }
 
 .completed {
