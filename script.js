@@ -2,6 +2,7 @@ const listaTarefa = document.getElementById('lista-tarefas');
 const todosLi = document.getElementsByTagName('li');
 const btnUp = document.getElementById('mover-cima');
 const btnDown = document.getElementById('mover-baixo');
+const meuModal = new bootstrap.Modal('#alertaModal');
 let qtLista;
 
 function posicaoBotoesNav() {
