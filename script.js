@@ -11,12 +11,6 @@ function posicaoBotoesNav() {
   btnDown.style.transform = `translateY(${-270 + 20 * qtLista}%)`;
   imgLapis.style.transform = `translateY(${-1 + qtLista}%)`;
   imgLapis.style.height = `${qtLista * 10 + 150}px`;
-  // if (qtLista < 4) {
-  //   listaTarefa.style.transform = `translateY(${170 - qtLista * 55}%)`;
-  //   console.log(167 - qtLista * 12);
-  // } else {
-  //   listaTarefa.style.transform = '';
-  // }
 }
 
 function destacaTarefa(evento) {
