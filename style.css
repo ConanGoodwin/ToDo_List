@@ -31,12 +31,18 @@ ol {
   /* top: 50%; */
   box-shadow: 10px 10px 10px 5px black;
   margin: 10px;
-  margin-left: 100px;
+  margin-left: 120px;
   padding: 5px 20px 10px 40px;
   background-image: url(./imagens/folha_pautada.png);
   background-repeat: no-repeat;
   background-size: 108% 125%;
   background-position: -10px -20px;
+}
+
+#imgLapis {
+  position: absolute;
+  max-height: 300px;
+  margin-left: 5px;
 }
 
 #mover-cima, #mover-baixo {
@@ -58,7 +64,7 @@ ol {
 }
 
 #remover-selecionado {
-  margin-left: 70px;
+  margin-left: 90px;
   margin-top: 5px;
 }
 

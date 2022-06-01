@@ -5,8 +5,12 @@ const btnDown = document.getElementById('mover-baixo');
 let qtLista;
 
 function posicaoBotoesNav() {
+  const imgLapis = document.getElementById('imgLapis');
+
   btnUp.style.transform = `translateY(${-380 + 20 * qtLista}%)`;
   btnDown.style.transform = `translateY(${-270 + 20 * qtLista}%)`;
+  imgLapis.style.transform = `translateY(${-1 + qtLista}%)`;
+  imgLapis.style.height = `${qtLista * 10 + 150}px`;
   // if (qtLista < 4) {
   //   listaTarefa.style.transform = `translateY(${170 - qtLista * 55}%)`;
   //   console.log(167 - qtLista * 12);
