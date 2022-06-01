@@ -37,6 +37,11 @@ ol {
   background-position: -10px -20px;
 }
 
+#texto-tarefa {
+  display: inline-block;
+  width: 90%;
+}
+
 #imgLapis {
   position: absolute;
   max-height: 300px;
